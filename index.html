@@ -50,7 +50,6 @@
                   videoStreamUrl = window.URL.createObjectURL(stream);
                   // устанавливаем как источник для  video
                   video.src = videoStreamUrl;
-                  button.style.display = 'block';
                 }, function(){
                   console.log('что-то не так с видеостримом :P');
                 });
