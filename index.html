@@ -8,8 +8,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title></title>
         <script>
-
-
           window.onload = function(){
             var canvas = document.getElementById('canvas');
             var video = document.getElementById('video');
@@ -17,19 +15,12 @@
             var allow = document.getElementById('allow');
             var buttonStart = document.getElementById('buttonStart');
             var stuff = document.getElementById('stuff');
-
             var context = canvas.getContext('2d');
             var videoStreamUrl = false;
-
             buttonStart.style.display = 'block';
-
             buttonStart.addEventListener('click', function(){
-
-
-
                 buttonStart.style.display = 'none';
                 stuff.style.display = 'block';
-
                 button.addEventListener('click', captureMe);
 
 
@@ -72,7 +63,7 @@
 
 
         };
-
+captureMe();
         </script>
 
     </head>
