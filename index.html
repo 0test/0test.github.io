@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html>
     <head>
@@ -21,13 +20,10 @@
             buttonStart.addEventListener('click', function(){
                 buttonStart.style.display = 'none';
                 stuff.style.display = 'block';
-                button.addEventListener('click', captureMe);
-
-
-                // navigator.getUserMedia  и   window.URL.createObjectURL (смутные времена браузерных противоречий 2012 :) )
+                //button.addEventListener('click', captureMe);
                 navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
                 window.URL.createObjectURL = window.URL.createObjectURL || window.URL.webkitCreateObjectURL || window.URL.mozCreateObjectURL || window.URL.msCreateObjectURL;
-                console.log('request',navigator.getUserMedia);
+
                 // запрашиваем разрешение на доступ к поточному видео камеры
                 navigator.getUserMedia({video: true}, function(stream) {
                   // разрешение от пользователя получено
@@ -42,28 +38,7 @@
                   console.log('что-то не так с видеостримом :P');
                 });
             });
-
-            var captureMe = function(){
-                //alert(1)
-              if(!videoStreamUrl) alert('То-ли вы не нажали "разрешить" в верху окна, то-ли что-то не так с вашим видео стримом')
-              // переворачиваем канвас зеркально по горизонтали
-              context.translate(canvas.width, 0);
-              context.scale(-1, 1);
-              // отрисовываем на канвасе текущий кадр видео
-              context.drawImage(video, 0, 0, video.width, video.height);
-              // получаем data: url изображения на c canvas
-              var base64dataUrl = canvas.toDataURL('image/png');
-              context.setTransform(1, 0, 0, 1, 0, 0); // убираем все кастомные трансформации canvas
-              // на этом этапе можно спокойно отправить  base64dataUrl на сервер и сохранить его там как файл (ну или типа того)
-              // но мы добавим эти тестовые снимки в наш пример:
-              var img = new Image();
-              img.src = base64dataUrl;
-              window.document.body.appendChild(img);
-            }
-
-
         };
-captureMe();
         </script>
 
     </head>
@@ -82,8 +57,6 @@ captureMe();
               <span> &lt;canvas&gt; </span>
               <canvas id="canvas" width="150" height="110" ></canvas>
             </div>
-
-            <input id="button" type="button" class="button" value="Фото">
         </div>
         <input id="buttonStart" type="button" class="button" value="Нажми, чтобы запустить демо" />
 
