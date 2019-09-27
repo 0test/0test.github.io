@@ -16,7 +16,7 @@
 		margin-bottom: 0.4em;}
 		.main{background:#eee;padding:2em 2em; max-width:70%;margin:0 auto;position:relative;}
 		.gitbtn{position:absolute;right:1em;top:1em;display:inline-block;border:1px solid #777;padding:3px 5px; padding-left:26px; background:url('https://github.githubassets.com/favicon.ico') no-repeat 4px center;background-size:18px;}
-		li{margin-bottom:0.6em;}
+		li{margin-bottom:0.6em;position:relative;}
 		p{line-height:140%;}
 		h3{
 		margin-top: 1.2em;
@@ -30,6 +30,8 @@
 		@media all and (max-width:480px){
 			ul{padding-left:1em;}
 		}
+		.my_cow{display:none;}
+		li:hover .my_cow{position:absolute;right:0;top:0;}
 		</style>
 	</head>
 	<body>
@@ -38,9 +40,11 @@
 		<p>Здесь собраны вещи, дающие максимальный бурст персонажа. Некоторые из них вполне могут быть заменены на предметы сета Т0. Так что, если вам упорно не везёт с какой-нибудь CassandraGrace, просто выбейте шапку Т0 и радуйтесь жизни.</p>
 			<h3>Голова</h3>
 			<ul>
-			<li>
+			<li data-id="10504">
 			<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=10504">Зелёная линза (инженеры)</a><BR>
 			Рандом статы. Нужна с +55 к исцеляющим заклинаниям
+			
+				<button class="my_cow" data-id="10504">Я это выбил</button>
 			</li>
 			<li><a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=13102">Милость Кассандры</a><BR>
 			Ворддроп.<BR>
