@@ -5,10 +5,8 @@ $(document).ready(function() {
 		values = Cookies.getJSON(access_cookie_name);
 		Cookies.remove(access_cookie_name);
 		Cookies.set(access_cookie_name,{
-			bg: values['bg'],
-			font: $(this).attr('rel'),
-			img:values['img'],
-			fonttype: values['fonttype']
+			bg: 1,
+			items: [1,2,3,4,5]
 		});
 		return false;
 	});
@@ -22,7 +20,7 @@ $(document).ready(function() {
 	else{
 		Cookies.set(access_cookie_name,{
 			bg: 0,
-			items: {1,2,3,4}
+			items: [1,2,3,4]
 		});
 	}
 	
