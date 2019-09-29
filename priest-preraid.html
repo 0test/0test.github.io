@@ -16,7 +16,7 @@
 		margin-bottom: 0.4em;}
 		.main{background:#eee;padding:2em 2em; max-width:70%;margin:0 auto;position:relative;}
 		.gitbtn{position:absolute;right:1em;top:1em;display:inline-block;border:1px solid #777;padding:3px 5px; padding-left:26px; background:url('https://github.githubassets.com/favicon.ico') no-repeat 4px center;background-size:18px;}
-		li{margin-bottom:0.6em;position:relative;}
+		li{margin-bottom:0.6em;position:relative;padding:10px;}
 		p{line-height:140%;}
 		h3{
 		margin-top: 1.2em;
@@ -30,7 +30,6 @@
 		@media all and (max-width:480px){
 			ul{padding-left:1em;}
 		}
-		
 		li:hover{background:#d4d4d4;}
 		.my_cow{display:none;
 		position: absolute;
@@ -40,8 +39,9 @@
 		background: #eee;
 		padding: 5px 5px;cursor:pointer;
 		}
-		/*li:hover .my_cow{display: block;}*/
-		.my_cow:hover{background:#000;}
+		li:hover .my_cow{display: block;}
+		.my_cow:hover{background:#fff;}
+		li.green:hover, .green{    background: #b5d4b5;}
 		</style>
 	</head>
 	<body>
@@ -51,195 +51,224 @@
 			<h3>Голова</h3>
 			<ul>
 			<li data-id="10504">
-			<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=10504">Зелёная линза (инженеры)</a><BR>
-			Рандом статы. Нужна с +55 к исцеляющим заклинаниям
-			
-				<button class="my_cow" data-id="10504">Я это выбил</button>
+				<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=10504">Зелёная линза (инженеры)</a><BR>
+				Рандом статы. Нужна с +55 к исцеляющим заклинаниям
+				<button class="my_cow">Я это выбил</button>
 			</li>
-			<li><a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=13102">Милость Кассандры</a><BR>
+			<li data-id="13102"><a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=13102">Милость Кассандры</a><BR>
 			Ворддроп.<BR>
 			Мониторьте аукцион
+			<button class="my_cow">Я это выбил</button>
 			</li>
-			<li><a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=18727">Багровая фетровая шляпа</a><BR>
+			<li data-id="18727"><a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=18727">Багровая фетровая шляпа</a><BR>
 			Стратхольм. Мировой судья Бартилас
+			<button class="my_cow">Я это выбил</button>
 			</li>
 			</ul>
 
 			<h3>Плечи</h3>
 			<ul>
-			<li>
+			<li data-id="18681">
 			<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=18681">Погребальная наплечная накидка</a><BR>
 			Некроситет. Рандом дроп
+			<button class="my_cow">Я это выбил</button>
 			</li>
-			<li>
+			<li data-id="13013">
 			<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=13013">Оплечье старшего волшебника</a><BR>
 			Ворддроп.<BR>
 			Мониторьте аукцион
+			<button class="my_cow">Я это выбил</button>
 			</li>
 			</ul>
 
 			<h3>Тело</h3>
 			<ul>
-			<li><a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=14154">Одеяние истинной веры</a><BR>
+			<li data-id="14154"><a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=14154">Одеяние истинной веры</a><BR>
 			Создавать и носить могут только портные, купить нельзя. Актуально до Накса.
+			<button class="my_cow">Я это выбил</button>
 			</li>
-			<li>
+			<li data-id="13346">
 			<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=13346">Одеяния Величайшей</a><BR>
 			Стратхольм. Барон Ривендер
+			<button class="my_cow">Я это выбил</button>
 			</li>
 			</ul>
 
 			<h3>Наручи</h3>
 			<ul>
-			<li>
+			<li data-id="16697">
 			<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=16697">Наручи Преданности</a><BR>
 			Стратхольм. Рандом дроп. 99% что выпадут в процессе фарма.
+			<button class="my_cow">Я это выбил</button>
 			</li>
 			</ul>
 
 			<h3>Руки</h3>
 			<ul>
-			<li><a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=12554">Краги великого глашатая</a><BR>
+			<li data-id="12554"><a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=12554">Краги великого глашатая</a><BR>
 			БРД. Принцесса
+			<button class="my_cow">Я это выбил</button>
 			</li>
-			<li>
+			<li data-id="10787">
 			<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=10787">Перчатки Атал'ай</a><BR>
 			Храм Хаккара<BR>
 			Рандом статы. +53 к исцеляющим заклинаниям. Забейте хер, 99% что не получите.
+			<button class="my_cow">Я это выбил</button>
 			</li>
 			</ul>
 
 			<h3>Пояс.</h3>
 			<ul>
-			<li><a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=14143">Пояс из призрачной ткани</a><BR>
+			<li data-id="14143"><a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=14143">Пояс из призрачной ткани</a><BR>
 			Шитьё
+			<button class="my_cow">Я это выбил</button>
 			</li>
-			<li>
+			<li data-id="16696">
 			<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=16696">Пояс Преданности</a><BR>
 			УБРС, рандом дроп или аукцион.
+			<button class="my_cow">Я это выбил</button>
 			</li>
 			</ul>
 
 			<h3>Штаны</h3>
 			<ul>
-			<li>
+			<li data-id="13170">
 			<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=13170">Поножи Небесного покрова</a><BR>
 			ЛБРС. Омокк
+			<button class="my_cow">Я это выбил</button>
 			</li>
-			<li>
+			<li data-id="11841">
 			<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=11841">Кюлоты Старшего дизайнера</a><BR>
 			БРД. Темнострой
+			<button class="my_cow">Я это выбил</button>
 			</li>
-			<li>
+			<li data-id="12965">
 			<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=12965">Поножи Покрова духов</a><BR>
 			УБРС. Зверь.<BR>
 			Превращают женского персонажа в работника борделя. Cool.
+			<button class="my_cow">Я это выбил</button>
 			</li>
-			<li>
+			<li data-id="11662">
 			<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=11662">Бан'токский кушак</a><BR>
 			БРД. Арена, Октор(огр)
+			<button class="my_cow">Я это выбил</button>
 			</li>
 			</ul>
 
 			<h3>Сапоги</h3>
 			<ul>
-			<li>
+			<li data-id="11822">
 			<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=11822">Всеволшебные сапоги</a><BR>
 			БРД. Повелитель големов.
+			<button class="my_cow">Я это выбил</button>
 			</li>
-			<li>
+			<li data-id="18102">
 			<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=18102">Сапоги драконьего всадника</a><BR>
 			УБРС. Ренд
+			<button class="my_cow">Я это выбил</button>
 			</li>
 			</ul>
 
 			<h3>Шея</h3>
 			<ul>
-			<li>
+			<li data-id="18723">
 			<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=18723">Живое ожерелье-цепь</a><BR>
 			Стратхольм. Раммштайн.
+			<button class="my_cow">Я это выбил</button>
 			</li>
-			<li>
+			<li data-id="13141">
 			<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=13141">Зуб Гнарра</a><BR>
-
 			УБРС. Драккисат.
+			<button class="my_cow">Я это выбил</button>
 			</li>
 			</ul>
 
 			<h3>Плащ</h3>
 			<ul>
-			<li>
+			<li data-id="11623">
 			<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=11623">Накидка волшебника</a><BR>
 			БРД. Герштан<BR>
 			Изи лут.
+			<button class="my_cow">Я это выбил</button>
 			</li>
-			<li>
+			<li data-id="13386">
 			<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=13386/">Накидка архивариуса</a><BR>
 
 			Стратхольм. Галфорд.<BR>
 			Рандом статы. Ищите +18 бх
+			<button class="my_cow">Я это выбил</button>
 			</li>
 			</ul>
 
 			<h3>Кольца</h3>
 			<ul>
-			<li>
+			<li data-id="16058">
 			<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=16058">Печать Фордринга</a><BR>
 
 			Квесты Фордринга в Восточных Чумных
+			<button class="my_cow">Я это выбил</button>
 			</li>
-			<li>
+			<li data-id="12543">
 			<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=12543">Поющий камень Стальгорна</a><BR>
 			Цепочка. Начинается с <a href="https://ru.classic.wowhead.com/quest=3701">этого квеста</a>.
+			<button class="my_cow">Я это выбил</button>
 			</li>
-			<li>
+			<li data-id="13178">
 			<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=13178">Розововинный обруч</a><BR>
 			УБРС. Воевода Вун
+			<button class="my_cow">Я это выбил</button>
 			</li>
 			</ul>
 
 			<h3>Тринкеты</h3>
 			<ul>
-			<li>
+			<li data-id="11819">
 			<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=11819">Второе дыхание</a><BR>
 			БРД. Повелитель големов.
+			<button class="my_cow">Я это выбил</button>
 			</li>
-			<li>
+			<li data-id="12930">
 			<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=12930">Пищик из древесины шиповника</a><BR>
 			УБРС. Джед.<BR>
 			Будьте аккуратны. Маги могут за него выебать и высушить.
+			<button class="my_cow">Я это выбил</button>
 			</li>
-			<li>
+			<li data-id="11832">
 			<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=11832">Амулет Озарения</a><BR>
 			БРД. Посол
+			<button class="my_cow">Я это выбил</button>
 			</li>
 			</ul>
 
 			<h3>Оружие</h3>
 			<ul>
-			<li>
+			<li data-id="11932">
 			Двуручное:
 			<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=11932">Путеводительный посох Мудрости</a><BR>
 			БРД. Император.
+			<button class="my_cow">Я это выбил</button>
 			</li>
 
-			<li>
+			<li data-id="11923">
 			Правая рука:
 			<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=11923">Молот Благодати</a><BR>
 
 			БРД. Семь дворфов.
+			<button class="my_cow">Я это выбил</button>
 			</li>
-			<li>
+			<li >
 			Левая рука:
 				<ul>
-					<li>
+					<li data-id="11928">
 					
 					<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=11928">Тауриссанский королевский скипетр</a><BR>
 					БРД. Император.
+					<button class="my_cow">Я это выбил</button>
 					</li>
-					<li>
+					<li data-id="11904">
 					<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=11904">Призрак Аквамонтоса</a><BR>		
 					Длинная (охренеть насколько) цепочка квестов. Начало <a rel=" nofollow" target="_blank" href="https://ru.classic.wowhead.com/quest=3844/">тут</a>
+					<button class="my_cow">Я это выбил</button>
 					</li>
 				</ul>
 			</li>
@@ -247,19 +276,22 @@
 
 			<h3>Жезл</h3>
 			<ul>
-			<li>
+			<li data-id="15282">
 			<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=15282">Драконий палец</a><BR>
 
 			Ворддроп. Рандом бонусы, ищите с + к хилу
+			<button class="my_cow">Я это выбил</button>
 			</li>
-			<li>
+			<li data-id="13938">
 			<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=13938">Стило Костеползателя</a><BR>
 
 			Некроситет. Гандлинг.
+			<button class="my_cow">Я это выбил</button>
 			</li>
-			<li>
+			<li data-id="16997">
 			<a rel="external nofollow noopener" target="_blank" href="https://ru.classic.wowhead.com/item=16997">Гроза</a><BR>
 			Награда за <a href="https://ru.classic.wowhead.com/quest=6187/"target="_blank" >квест</a>
+			<button class="my_cow">Я это выбил</button>
 
 			</li>
 			</ul>
