@@ -5,6 +5,7 @@ $(document).ready(function() {
 
 	if(Cookies.get(access_cookie_name)){
 		values = Cookies.getJSON(access_cookie_name);
+		console.log(values);
 		eachItems = values;
 	}
 	else{
