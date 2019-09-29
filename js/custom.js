@@ -6,7 +6,7 @@ $(document).ready(function() {
 	if(Cookies.get(access_cookie_name)){
 		values = Cookies.getJSON(access_cookie_name);
 		console.log(values['items']);
-		eachItems = values;
+		eachItems = values['items'];
 	}
 	else{
 		Cookies.set(access_cookie_name,{
