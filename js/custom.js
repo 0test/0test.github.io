@@ -12,7 +12,8 @@ $(document).ready(function() {
 			items: []
 		});
 	}
-	console.log(eachItems);
+	reloadClasses(eachItems);
+	
 	
 	$('.my_cow').click(function(){
 		that = this;
@@ -30,12 +31,12 @@ $(document).ready(function() {
 		reloadClasses(eachItems);
 		return false;
 	});
+	
 	function reloadClasses(eachItems){
 		$('li[data-id]').removeClass('green');
 		$('li[data-id]').each(function(i,e){
 			console.log(eachItems.indexOf(  $(e).attr('data-id') , 0) );
 			if( eachItems.indexOf( $(e).attr('data-id'), 0)  != -1 ){
-
 				$(e).addClass('green');
 			}
 		});
