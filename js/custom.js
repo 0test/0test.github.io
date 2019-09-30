@@ -11,7 +11,9 @@ $(document).ready(function() {
 	else{
 		Cookies.set(access_cookie_name,{
 			items: []
-		});
+		},
+		{ expires: 356 }
+		);
 	}
 	reloadClasses(eachItems);
 	
@@ -28,7 +30,8 @@ $(document).ready(function() {
 		Cookies.remove(access_cookie_name);
 		Cookies.set(access_cookie_name,{
 			items: eachItems
-		});
+		},
+		{ expires: 356 });
 		reloadClasses(eachItems);
 		return false;
 	});
