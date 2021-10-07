@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>jsQR Demo</title>
-    <script src="jsqr.js"></script>
+    <script src="/js/jsqr.js"></script>
     <style>
         body {
             font-family: sans-serif;
@@ -11,13 +11,6 @@
             max-width: 640px;
             margin: 0 auto;
             position: relative;
-        }
-        
-        #githubLink {
-            position: absolute;
-            right: 0;
-            top: 12px;
-            color: #2D99FF;
         }
         
         h1 {
@@ -56,10 +49,10 @@
 <body>
     <h1>js qr</h1>
 
-    <div id="loadingMessage"> Unable to access video stream (please make sure you have a webcam enabled)</div>
+    <div id="loadingMessage">Разрешите сайту успользовать камеру устройства</div>
     <canvas id="canvas" hidden></canvas>
     <div id="output" hidden>
-        <div id="outputMessage">No QR code detected.</div>
+        <div id="outputMessage">Нет кода</div>
         <div hidden><b>Data:</b> <span id="outputData"></span></div>
     </div>
     <script>
@@ -93,7 +86,7 @@
         });
 
         function tick() {
-            loadingMessage.innerText = "⌛ Loading video..."
+            loadingMessage.innerText = " Loading video..."
             if (video.readyState === video.HAVE_ENOUGH_DATA) {
                 loadingMessage.hidden = true;
                 canvasElement.hidden = false;
