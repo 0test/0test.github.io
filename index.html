@@ -48,7 +48,7 @@
     </head>
     <body>
         <div id="stuff">
-            <div id="allow">▲ ▲ ▲ Разрешите использовать камеру ▲ ▲ ▲</div>
+            <div id="allow">▲  Разрешите использовать камеру </div>
             <video id="video" autoplay playsinline muted></video>
         </div>
         <input id="buttonStart" type="button" value="Нажми, чтобы запустить демо">
@@ -70,11 +70,10 @@
 
                         // Прячем подсказку
                         allow.style.display = 'none';
-
-                        // ✅ Современный способ: присвоить stream как srcObject
+ 
                         video.srcObject = stream;
                     } catch (err) {
-                        allow.textContent = '❌ Ошибка: ' + (err.message || 'не удалось получить доступ к камере');
+                        allow.textContent = ' Ошибка: ' + (err.message || 'не удалось получить доступ к камере');
                         console.error('Ошибка getUserMedia:', err);
                     }
                 });
