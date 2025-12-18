@@ -4,66 +4,81 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title></title>
+        <title>Камера демо</title>
         <style>
-            body{
-                background:#000;
+            body {
+                background: #000;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
             }
-            input#buttonStart {
+            #buttonStart {
                 position: absolute;
                 top: 100px;
                 left: 50%;
-                margin-left: -100px;
+                transform: translateX(-50%);
                 padding: 8px 13px;
-                background: linear-gradient(to bottom,#c1cfff,#788fbf);
+                background: linear-gradient(to bottom, #c1cfff, #788fbf);
                 border: none;
                 border-radius: 3px;
                 border-bottom: 1px solid #153284;
                 border-right: 1px solid #5673c3;
                 border-left: 1px solid #5575ce;
                 border-top: 1px solid #ababef;
-            }            
+            }
+            #stuff {
+                display: none;
+                position: absolute;
+                top: 0; left: 0; right: 0; bottom: 0;
+                color: white;
+                text-align: center;
+                font-family: sans-serif;
+            }
+            #allow {
+                position: absolute;
+                top: 20px;
+                width: 100%;
+            }
+            #video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         </style>
-        <script>
-          window.onload = function(){
-            var canvas = document.getElementById('canvas');
-            var video = document.getElementById('video');
-            var button = document.getElementById('button');
-            var allow = document.getElementById('allow');
-            var buttonStart = document.getElementById('buttonStart');
-            var stuff = document.getElementById('stuff');
-            var videoStreamUrl = false;
-            buttonStart.style.display = 'block';
-            buttonStart.addEventListener('click', function(){
-                buttonStart.style.display = 'none';
-                stuff.style.display = 'block';
-                //button.addEventListener('click', captureMe);
-                navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
-                window.URL.createObjectURL = window.URL.createObjectURL || window.URL.webkitCreateObjectURL || window.URL.mozCreateObjectURL || window.URL.msCreateObjectURL;
-
-                // запрашиваем разрешение на доступ к поточному видео камеры
-                navigator.getUserMedia({video: true}, function(stream) {
-                  // разрешение от пользователя получено
-                  // скрываем подсказку
-                  allow.style.display = "none";
-                  // получаем url поточного видео
-                  videoStreamUrl = window.URL.createObjectURL(stream);
-                  // устанавливаем как источник для  video
-                  video.src = videoStreamUrl;
-                }, function(){
-                  console.log('что-то не так с видеостримом :P');
-                });
-            });
-        };
-        </script>
     </head>
     <body>
-        <div class="stuff" id="stuff">
+        <div id="stuff">
             <div id="allow">▲ ▲ ▲ Разрешите использовать камеру ▲ ▲ ▲</div>
-            <div class="item">
-              <video id="video" width="100%" height="100%" autoplay="autoplay"></video>
-            </div>
+            <video id="video" autoplay playsinline muted></video>
         </div>
-        <input id="buttonStart" type="button" class="button" value="Нажми, чтобы запустить демо">
+        <input id="buttonStart" type="button" value="Нажми, чтобы запустить демо">
+
+        <script>
+            window.onload = function() {
+                const buttonStart = document.getElementById('buttonStart');
+                const stuff = document.getElementById('stuff');
+                const allow = document.getElementById('allow');
+                const video = document.getElementById('video');
+
+                buttonStart.addEventListener('click', async function() {
+                    buttonStart.style.display = 'none';
+                    stuff.style.display = 'block';
+
+                    try {
+                        // Запрос доступа к камере
+                        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+
+                        // Прячем подсказку
+                        allow.style.display = 'none';
+
+                        // ✅ Современный способ: присвоить stream как srcObject
+                        video.srcObject = stream;
+                    } catch (err) {
+                        allow.textContent = '❌ Ошибка: ' + (err.message || 'не удалось получить доступ к камере');
+                        console.error('Ошибка getUserMedia:', err);
+                    }
+                });
+            };
+        </script>
     </body>
 </html>
